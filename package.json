@@ -1,0 +1,17 @@
+{
+  "name": "expug-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": " <musabadru@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@8.7.5",
+  "dependencies":{
+    "express": "4.18.2",
+    "pug": "3.0.2"
+  }
+}

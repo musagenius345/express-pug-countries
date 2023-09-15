@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: test.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: test.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @typedef {Object} Country
+ * @property {Object} name - Information about the country's name.
+ * @property {string} name.common - The common name of the country.
+ * @property {string} name.official - The official name of the country.
+ * @property {Object} name.nativeName - Information about the native name of the country.
+ * @property {string[]} tld - An array of top-level domains associated with the country.
+ * @property {string} cca2 - The two-letter country code.
+ * @property {string} ccn3 - The three-digit country code.
+ * @property {string} cca3 - The three-letter country code.
+ * @property {string} cioc - The country's International Olympic Committee (IOC) code.
+ * @property {boolean} independent - Indicates whether the country is independent.
+ * @property {string} status - The status of the country (e.g., 'officially-assigned').
+ * @property {boolean} unMember - Indicates whether the country is a member of the United Nations.
+ * @property {Object.&lt;string, Object>} currencies - Information about the country's currencies.
+ * @property {Object} idd - Information about international direct dialing (IDD) codes.
+ * @property {string} idd.root - The IDD root code.
+ * @property {string[]} idd.suffixes - An array of IDD suffixes.
+ * @property {string[]} capital - An array of the country's capital cities.
+ * @property {string[]} altSpellings - An array of alternate spellings or names for the country.
+ * @property {string} region - The region where the country is located.
+ * @property {string} subregion - The subregion where the country is located.
+ * @property {Object.&lt;string, string>} languages - Information about the country's languages.
+ * @property {Object.&lt;string, Object>} translations - Translations of country information.
+ * @property {number[]} latlng - The latitude and longitude coordinates of the country.
+ * @property {boolean} landlocked - Indicates whether the country is landlocked.
+ * @property {string[]} borders - An array of bordering countries.
+ * @property {number} area - The area of the country.
+ * @property {Object.&lt;string, Object>} demonyms - Information about country demonyms.
+ * @property {string} flag - The flag of the country.
+ * @property {Object.&lt;string, string>} maps - URLs to maps of the country.
+ * @property {number} population - The population of the country.
+ * @property {Object.&lt;string, number>} gini - The Gini coefficient data.
+ * @property {string} fifa - The FIFA code of the country.
+ * @property {Object} car - Information about the country's driving habits.
+ * @property {string[]} car.signs - An array of road signs used in the country.
+ * @property {string} car.side - The side of the road on which vehicles drive.
+ * @property {string[]} timezones - An array of timezones used in the country.
+ * @property {string[]} continents - An array of continents to which the country belongs.
+ * @property {Object.&lt;string, string>} flags - URLs to flag images and alternative flag descriptions.
+ * @property {Object.&lt;string, string>} coatOfArms - URLs to coat of arms images.
+ * @property {string} startOfWeek - The start of the week in the country.
+ * @property {Object} capitalInfo - Information about the country's capital city.
+ * @property {number[]} capitalInfo.latlng - The latitude and longitude coordinates of the capital city.
+ * @property {Object} postalCode - Information about postal codes in the country.
+ * @property {string} postalCode.format - The format of postal codes in the country.
+ * @property {string} postalCode.regex - The regular expression pattern for matching postal codes.
+ */
+
+
+
+/**
+ * @returns {Country}
+ **/
+async function fetchData(){
+  const URL = 'https://restcountries.com/v3.1/all'
+  
+  const response = await fetch(URL)
+  return response.json()
+} 
+/**
+ * @param {Country}
+ * */
+
+function sortAlphaBeta(data){
+  [...data].sort((a, b) => {
+    a.name.common.toLowerCase().toLocaleCompare(b.name.common.toLowerCase())
+  })
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#sortAlphaBeta">sortAlphaBeta</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Sep 15 2023 15:43:24 GMT+0300 (East Africa Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

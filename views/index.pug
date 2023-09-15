@@ -1,0 +1,22 @@
+// views/index.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/pico.css")
+    link(rel="stylesheet", href="/style.css")
+    title World Countries
+  body
+    div.container
+      div.countries
+        each country in countries
+          a(href=`/country/${country.name.common}`, class="country-link")
+            article
+              img.flag(src=country.flags.svg, alt=`${country.name.common}'s flag`, loading="lazy")
+              h3= country.name.common
+              h4 Capital City: #{country.capital}
+              p Population: #{country.population.toLocaleString()}
+              //p Currency: #{checkCurrency(country.currencies)} 
+
+script(src="/script.js")

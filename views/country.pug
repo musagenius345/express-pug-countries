@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/pico.css")
+    link(rel="stylesheet", href="/style.css")
+    // Display the common name as the page title
+    title= country.name.common 
+  body
+    div.container
+      div.country-details
+        article
+          a.button(href="/", class="back-link") Back to Countries
+          img.flag(src=country.flags.svg, alt=`${country.name.common}'s flag`, loading="lazy")
+          // Display the common name as the main heading
+          h1= country.name.common 
+          // Assuming it's an array, display the first capital
+          h2 Capital City: #{country.capital[0]} 
+          p Population: #{country.population.toLocaleString()}
+          //p Currency: #{country.currencies.KES.name} (#{country.currencies.KES.symbol})
+script(src="/script.js")
