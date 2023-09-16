@@ -1,4 +1,5 @@
-const express = require('/data/data/com.termux/files/home/.local/share/pnpm/global/5/node_modules/express/index.js');
+//const express = require('/data/data/com.termux/files/home/.local/share/pnpm/global/5/node_modules/express/index.js');
+const express = require('express')
 const path = require('path');
 const app = express();
 const API_URL = 'https://restcountries.com/v3.1/'
@@ -6,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'dist'));
 
 
 // Define routes

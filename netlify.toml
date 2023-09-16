@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build" # Adjust this command based on your build setup
-  publish = "public" # Specify the directory where your built files are located
+  command = "npm run start && npm run build" # Adjust this command based on your build setup
+  publish = "dist" # Specify the directory where your built files are located
 
 [build.environment]
   NODE_ENV = "production" # Set the NODE_ENV to production for your build
@@ -35,3 +35,11 @@
   for = "/*"
     [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"

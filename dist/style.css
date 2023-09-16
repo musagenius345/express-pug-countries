@@ -1,0 +1,45 @@
+/* .countries:is(:hover, :focus) article{
+      background-color: red;
+      color: black;
+    } */
+:root {
+  --margin: 1rem
+}
+
+
+h3 {
+  margin-block: 1rem;
+}
+
+
+h4 {
+  margin-block: calc(var(--margin) - 6px)
+}
+
+p {
+  margin-block: calc(var(--margin) - 8px)
+}
+
+img {
+  display: block;
+  cursor: ponter;
+  max-width: 100%;
+}
+
+.countries:where([aria-busy=true]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag {
+  border-radius: 12px;
+}
+
+[aria-busy=true],
+[aria-busy=true]::before {
+  height: 80vh;
+  width: 80vw;
+  height: 80dvh;
+  font-size: 5rem;
+}
